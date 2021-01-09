@@ -1,0 +1,187 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://textures/menu_theme.theme" type="Theme" id=1]
+[ext_resource path="res://scenes/Menu/settings-controls.gd" type="Script" id=2]
+
+[node name="controls" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Keys" type="GridContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -196.5
+margin_top = -49.5
+margin_right = 196.5
+margin_bottom = 49.5
+custom_constants/vseparation = 15
+custom_constants/hseparation = 15
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Forward" type="VBoxContainer" parent="CanvasLayer/Keys"]
+margin_right = 184.0
+margin_bottom = 42.0
+theme = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Keys/Forward"]
+margin_right = 184.0
+margin_bottom = 19.0
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Forward/HBoxContainer"]
+margin_right = 70.0
+margin_bottom = 19.0
+text = "Forward"
+
+[node name="ChangeF" type="Button" parent="CanvasLayer/Keys/Forward/HBoxContainer"]
+margin_left = 74.0
+margin_right = 184.0
+margin_bottom = 19.0
+text = "Change Bind"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Keys/Forward"]
+margin_top = 23.0
+margin_right = 184.0
+margin_bottom = 42.0
+
+[node name="Current" type="Label" parent="CanvasLayer/Keys/Forward/HBoxContainer2"]
+margin_right = 130.0
+margin_bottom = 19.0
+text = "Current Bind:"
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Forward/HBoxContainer2"]
+margin_left = 134.0
+margin_right = 144.0
+margin_bottom = 19.0
+text = "W"
+
+[node name="Backward" type="VBoxContainer" parent="CanvasLayer/Keys"]
+margin_left = 199.0
+margin_right = 393.0
+margin_bottom = 42.0
+theme = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Keys/Backward"]
+margin_right = 194.0
+margin_bottom = 19.0
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Backward/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 19.0
+text = "Backward"
+
+[node name="Change" type="Button" parent="CanvasLayer/Keys/Backward/HBoxContainer"]
+margin_left = 84.0
+margin_right = 194.0
+margin_bottom = 19.0
+text = "Change Bind"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Keys/Backward"]
+margin_top = 23.0
+margin_right = 194.0
+margin_bottom = 42.0
+
+[node name="Current" type="Label" parent="CanvasLayer/Keys/Backward/HBoxContainer2"]
+margin_right = 130.0
+margin_bottom = 19.0
+text = "Current Bind:"
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Backward/HBoxContainer2"]
+margin_left = 134.0
+margin_right = 144.0
+margin_bottom = 19.0
+text = "S"
+
+[node name="Left" type="VBoxContainer" parent="CanvasLayer/Keys"]
+margin_top = 57.0
+margin_right = 184.0
+margin_bottom = 99.0
+theme = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Keys/Left"]
+margin_right = 184.0
+margin_bottom = 19.0
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Left/HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 19.0
+text = "Left"
+
+[node name="Change" type="Button" parent="CanvasLayer/Keys/Left/HBoxContainer"]
+margin_left = 44.0
+margin_right = 154.0
+margin_bottom = 19.0
+text = "Change Bind"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Keys/Left"]
+margin_top = 23.0
+margin_right = 184.0
+margin_bottom = 42.0
+
+[node name="Current" type="Label" parent="CanvasLayer/Keys/Left/HBoxContainer2"]
+margin_right = 130.0
+margin_bottom = 19.0
+text = "Current Bind:"
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Left/HBoxContainer2"]
+margin_left = 134.0
+margin_right = 144.0
+margin_bottom = 19.0
+text = "A"
+
+[node name="Right" type="VBoxContainer" parent="CanvasLayer/Keys"]
+margin_left = 199.0
+margin_top = 57.0
+margin_right = 393.0
+margin_bottom = 99.0
+theme = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Keys/Right"]
+margin_right = 194.0
+margin_bottom = 19.0
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Right/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 19.0
+text = "Right"
+
+[node name="Change" type="Button" parent="CanvasLayer/Keys/Right/HBoxContainer"]
+margin_left = 54.0
+margin_right = 164.0
+margin_bottom = 19.0
+text = "Change Bind"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Keys/Right"]
+margin_top = 23.0
+margin_right = 194.0
+margin_bottom = 42.0
+
+[node name="Current" type="Label" parent="CanvasLayer/Keys/Right/HBoxContainer2"]
+margin_right = 130.0
+margin_bottom = 19.0
+text = "Current Bind:"
+
+[node name="Key" type="Label" parent="CanvasLayer/Keys/Right/HBoxContainer2"]
+margin_left = 134.0
+margin_right = 144.0
+margin_bottom = 19.0
+text = "D"
+
+[node name="PopupDialog" type="PopupDialog" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PopupDialog"]
+margin_right = 40.0
+margin_bottom = 19.0
+text = "Ttewrwerwerwerwerwerwerwerwerwerwer"
+[connection signal="pressed" from="CanvasLayer/Keys/Forward/HBoxContainer/ChangeF" to="." method="_on_ChangeF_pressed"]

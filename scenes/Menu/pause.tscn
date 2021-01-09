@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Menu/pause.gd" type="Script" id=1]
+[ext_resource path="res://textures/2D Assets/Font/consolab.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://textures/menu_theme.theme" type="Theme" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Pause" type="Control"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.470588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -313.5
+margin_right = 313.5
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press ESC to resume"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+anchor_left = 0.01
+anchor_top = 0.99
+anchor_right = 0.01
+anchor_bottom = 0.99
+margin_top = -19.0
+margin_right = 165.0
+theme = ExtResource( 3 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DebugMenu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.0
+margin_top = -66.0
+margin_right = 97.0
+margin_bottom = 66.0
+theme = ExtResource( 3 )
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DebugMenu"]
+margin_right = 194.0
+margin_bottom = 19.0
+text = "DEBUG"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DebugMenu"]
+margin_top = 29.0
+margin_right = 194.0
+margin_bottom = 61.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="DebugMenu/HBoxContainer"]
+margin_top = 6.0
+margin_right = 80.0
+margin_bottom = 25.0
+text = "Enemy AI"
+
+[node name="enemyToggle" type="CheckButton" parent="DebugMenu/HBoxContainer"]
+margin_left = 90.0
+margin_right = 154.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="DebugMenu"]
+margin_top = 71.0
+margin_right = 194.0
+margin_bottom = 103.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="DebugMenu/HBoxContainer2"]
+margin_top = 6.0
+margin_right = 120.0
+margin_bottom = 25.0
+text = "Map Darkness"
+
+[node name="darkToggle" type="CheckButton" parent="DebugMenu/HBoxContainer2"]
+margin_left = 130.0
+margin_right = 194.0
+margin_bottom = 32.0
+
+[node name="enemyReset" type="Button" parent="DebugMenu"]
+margin_top = 113.0
+margin_right = 194.0
+margin_bottom = 132.0
+text = "Reset Enemy"
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="DebugMenu/HBoxContainer/enemyToggle" to="." method="_on_CheckButton_pressed"]
+[connection signal="pressed" from="DebugMenu/HBoxContainer/enemyToggle" to="." method="_on_enemyToggle_pressed"]
+[connection signal="pressed" from="DebugMenu/HBoxContainer2/darkToggle" to="." method="_on_darkToggle_pressed"]
+[connection signal="pressed" from="DebugMenu/enemyReset" to="." method="_on_enemyReset_pressed"]
